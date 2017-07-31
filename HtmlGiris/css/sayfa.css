@@ -1,0 +1,46 @@
+﻿h1 {
+    color: royalblue;
+    font-family: "corbel";
+}
+
+p {
+    background-color: yellow;
+}
+
+ol li {
+    color: royalblue;
+}
+
+body > p:nth-child(6) {
+    color: red;
+}
+
+div {
+    background-color: #cccccc;
+    height: 200px;
+    width: 200px;
+    border: 5px dotted red;
+    margin: 5px 10px 5px 20px;
+    border-radius: 20px 0 20px 0;
+    transition: .5s ease;
+}
+
+    div:hover {
+        border-radius: 0 20px 0 20px;
+        border: 5px dotted royalblue;
+    }
+
+.sehirler {
+    float: left;
+}
+
+#sinop {
+    border: 5px dashhed green;
+    background-color: royalblue;
+    padding: 5px;
+}
+
+    #sinop:hover {
+        border-radius: 0 20px 0 20px;
+        border: 5px dotted gray;
+    }
