@@ -1,0 +1,32 @@
+﻿body {
+    background-color: #e34f26;
+    margin: 20px;
+    color: #fff;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+header {
+    background-color: #f28150;
+    padding: 20px;
+}
+
+nav {
+    background-color: #f49870;
+    padding: 20px;
+    font-size: 14px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-family: 'Segoe UI',sans-serif;
+}
+
+article, section, footer {
+    background-color: #f49870;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 20px;
+}
+article {
+    background-color: #f28150;     
+ }
+
+/*Şimdi navigasyon css düzenleme*/

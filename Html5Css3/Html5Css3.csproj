@@ -77,6 +77,7 @@
     <Content Include="img\html5-tag-etiket.png" />
     <Content Include="index.html" />
     <Content Include="script\app.js" />
+    <Content Include="style\site.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
