@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>HTML 5 Semantik Elemanlar</title>
+    <script src="script/app.js"></script>
+</head>
+<body>
+    <header>Kişisel Site</header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Ana Sayfa</a></li>
+            <li><a href="#">Hakkımızda</a></li>
+            <li>
+                <a href="#">Projeler</a>
+                <ul>
+                    <li><a href="#">Kişisel Projeler</a></li>
+                    <li><a href="#">Özel Projeler</a></li>
+                </ul>
+            </li>
+            <li><a href="#">İletişim</a></li>
+        </ul>
+    </nav>
+    <article>
+        <section>
+            Sapien elit in malesuada semper mi, id sollicitudin urna fermentum.
+        </section>
+        <section>
+            Mattis ut vitae feugiat augue cras ut metus a risus iaculis scelerisque eu ac ante fusce non varius purus aenean nec magna felis fusce vestibulum velit mollis odio sollicitudin lacinia aliquam posuere, sapien elementum lobortis tincidunt, turpis dui ornare nisl, sollicitudin interdum turpis nunc eget sem nulla eu ultricies orci praesent id augue nec lorem pretium congue sit amet ac nunc fusce iaculis lorem eu diam hendrerit at mattis purus dignissim vivamus mauris tellus, fringilla.
+            <form>
+                <label>Ad</label>
+                <input type="text" placeholder="Lütfen adınızı giriniz" maxlength="15" required /> <br />
+                <label>Soyad</label>
+                <input type="text" placeholder="Lütfen Soyadınızı giriniz" maxlength="15" required /><br />
+                <input type="radio" name="cinsiyet" value="Erkek" /> Erkek
+                <input type="radio" name="cinsiyet" value="Kadın" checked /> Kadın <br />
+                <input type="text" value="Burayı değiştiremezsin" disabled /><br />
+                <select>
+                    <option>İstanbul</option>
+                    <option selected>Sinop</option>
+                    <option>Ankara</option>
+                </select>
+                <br />
+                <label>Çalışmak istediğiniz konum</label><br />
+                <input type="checkbox" />Front-End<br />
+                <input type="checkbox" />Back-End<br />
+                <textarea rows="10" cols="30" placeholder="Yorum ekle"></textarea>
+                <br />
+                <input type="email" placeholder="Email adresinizi giriniz" required />
+                <br />
+                <input type="date" placeholder="Doğum tarihi" />
+                <input type="month" />
+                <input type="week" />
+                <input type="time" /><br />
+                <input type="range" id="a" min="0" max="100" name="a" value="50" />
+                <input type="number" id="b" min="0" max="100" name="b" step="10" value="50" />
+                <br />
+                <input type="search" />
+                <br />
+                <input type="button" value="Selam ver" onclick="selamver()" /><br />
+                <input type="reset" value="Formu Temizle" />
+                <input type="submit" value="Gönder" />
+            </form>
+            <figure>
+                <img src="img/html5-tag-etiket.png" height="300" width="200" />
+                <figcaption>HTML5 Yenilikleri</figcaption>
+            </figure>
+        </section>
+        <details>
+            <summary>Referanslar</summary>
+            <p>Referans 1</p>
+            <p>Referans 2</p>
+        </details>
+    </article>
+    <footer>
+        <p>Kişisel Sayfadır</p>
+        E Posta: <a href="mailto:birisi@bilmemne.com"> Bana Mail Gönder</a>
+        Telefon <a href="tel:055555555">ara beni</a>
+    </footer>
+
+    <script>
+            //function selamver() {
+            //    alert("Merhaba JavaScript");
+            //}
+    </script>
+</body>
+</html>

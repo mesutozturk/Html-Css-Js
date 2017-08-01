@@ -5,6 +5,10 @@ VisualStudioVersion = 15.0.26430.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HtmlGiris", "HtmlGiris\HtmlGiris.csproj", "{84EBA49D-2BD2-4132-A356-4398D389D9E0}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HTML CSS", "HTML CSS", "{D68BA4DF-0A15-41F3-9BCC-FDBA9A7D5EFA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Html5Css3", "Html5Css3\Html5Css3.csproj", "{B0EA00B8-507C-4910-854E-3F68257A9031}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,8 +19,16 @@ Global
 		{84EBA49D-2BD2-4132-A356-4398D389D9E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{84EBA49D-2BD2-4132-A356-4398D389D9E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{84EBA49D-2BD2-4132-A356-4398D389D9E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0EA00B8-507C-4910-854E-3F68257A9031}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0EA00B8-507C-4910-854E-3F68257A9031}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0EA00B8-507C-4910-854E-3F68257A9031}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0EA00B8-507C-4910-854E-3F68257A9031}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{84EBA49D-2BD2-4132-A356-4398D389D9E0} = {D68BA4DF-0A15-41F3-9BCC-FDBA9A7D5EFA}
+		{B0EA00B8-507C-4910-854E-3F68257A9031} = {D68BA4DF-0A15-41F3-9BCC-FDBA9A7D5EFA}
 	EndGlobalSection
 EndGlobal
