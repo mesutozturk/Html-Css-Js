@@ -1,15 +1,19 @@
-﻿body {
+﻿@import url('https://fonts.googleapis.com/css?family=Pacifico&subset=latin-ext');
+@import url('https://fonts.googleapis.com/css?family=Play:400,700&subset=latin-ext');
+body {
     background-color: #e34f26;
     margin: 20px;
     color: #fff;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Play', sans-serif;
 }
 
 header {
     background-color: #f28150;
     padding: 20px;
 }
-
+p {
+    font-family: 'Play', sans-serif;
+}
 nav {
     background-color: #f49870;
     padding: 20px;
@@ -24,6 +28,8 @@ article, section, footer {
     margin-top: 20px;
     margin-bottom: 20px;
     padding: 20px;
+    font-family: 'Pacifico', cursive;
+    font-size: 1.5em;
 }
 
 article {
@@ -85,4 +91,24 @@ nav ul {
     background-image: -moz-linear-gradient(bottom, #3F4346 100%, #2B2C2F 0);
     background-image: -webkit-linear-gradient(bottom, #3F4346 100%, #2B2C2F 0);
     background-image: -ms-linear-gradient(bottom, #3F4346 100%, #2B2C2F 0);
+    -moz-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    -webkit-transition: all .3s ease;
+    transition: all .3s ease;
+}
+img:hover {
+    -ms-transform: scale3d(1.1, 1.1,1.2) rotate(0deg) translate(59px);
+    -webkit-transform: scale3d(1.1, 1.1,1.2) rotate(0deg) translate(59px);
+    transform: scale3d(1.1, 1.1,1.2) rotate(0deg) translate(59px);
+}
+
+img {
+    -ms-transform: rotate(10deg) rotateY(60deg);
+    -webkit-transform: rotate(10deg) rotateY(60deg);
+    transform: rotate(10deg) rotateY(60deg);
+
+    -ms-transition: all 1.7s ease;
+    -o-transition: all 1.7s ease;
+    -webkit-transition: all 1.7s ease;
+    transition: all 1.7s ease;
 }
