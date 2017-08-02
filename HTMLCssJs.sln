@@ -9,6 +9,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HTML CSS", "HTML CSS", "{D6
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Html5Css3", "Html5Css3\Html5Css3.csproj", "{B0EA00B8-507C-4910-854E-3F68257A9031}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "JS Giris", "JS Giris", "{51BCA9CA-780E-42EB-97BE-A33FD8F9573D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JSIslemleri", "JSIslemleri\JSIslemleri.csproj", "{718258EA-CA69-4635-8BF7-A0E99918AEB8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +27,10 @@ Global
 		{B0EA00B8-507C-4910-854E-3F68257A9031}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B0EA00B8-507C-4910-854E-3F68257A9031}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B0EA00B8-507C-4910-854E-3F68257A9031}.Release|Any CPU.Build.0 = Release|Any CPU
+		{718258EA-CA69-4635-8BF7-A0E99918AEB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{718258EA-CA69-4635-8BF7-A0E99918AEB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{718258EA-CA69-4635-8BF7-A0E99918AEB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{718258EA-CA69-4635-8BF7-A0E99918AEB8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -30,5 +38,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{84EBA49D-2BD2-4132-A356-4398D389D9E0} = {D68BA4DF-0A15-41F3-9BCC-FDBA9A7D5EFA}
 		{B0EA00B8-507C-4910-854E-3F68257A9031} = {D68BA4DF-0A15-41F3-9BCC-FDBA9A7D5EFA}
+		{718258EA-CA69-4635-8BF7-A0E99918AEB8} = {51BCA9CA-780E-42EB-97BE-A33FD8F9573D}
 	EndGlobalSection
 EndGlobal

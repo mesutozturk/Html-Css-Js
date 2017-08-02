@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        function sayfayukle(a, b, c) {
+            console.log("Sayfa Yüklendi" + a + b + c);
+        }
+
+        function gonder(btn) {
+            var txtmsg = document.getElementById("txtmesaj");
+            console.log(txtmsg.value);
+            console.log(btn);
+        }
+
+        function yazdir(txt) {
+            console.log(txt.value);
+            var lbl = document.getElementById("lblmesaj");
+            //lbl.innerText = "<b>"+txt.value+"</b>";
+            lbl.innerHTML = "<b>"+txt.value+"</b>";
+        }
+    </script>
+</head>
+<body onload="sayfayukle()">
+    <input type="button" value="Tıkla" onclick="sayfayukle(1,2)" /> <br />
+    <input type="text" id="txtmesaj" /> <input type="button" value="Gönder" onclick="gonder(this.type)" />
+    <br />
+    <br />
+    <input type="text" onkeyup="yazdir(this)"/><br />
+    <label id="lblmesaj"></label>
+</body>
+</html>
