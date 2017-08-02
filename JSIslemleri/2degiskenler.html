@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        var a = 5;
+        a = "Kamil";
+        a = true;
+        a = new Date();
+        a = 1.56;
+        a = new Object();
+        a = {};
+        a.ad = "Kamil";
+        a.soyad = "Fıdıl";
+        var b = {
+            ad: "Kamil",
+            soyad: "Fıdıl"
+        }
+        a = [1, 2, 3];
+        a[0] = 5;
+        a[1] = "Kamil";
+        a[2] = b;
+        a[10] = 99.99;
+
+        function myFunction(a, b, c) {
+            if (a == 0)
+                return;
+            else
+                return a;
+        }
+        
+        var myFunction2 = function (a, b, c) {
+            var sonuc = myFunction(0, 4, 5);
+            console.log(sonuc);
+            for (var i = 0; i < 10; i++) {
+                
+            }
+
+            if (1 === "1")
+                console.log("1ler eşit");
+            else
+                console.log("1ler eşit değil");
+            console.log(2 ** 5);
+        }
+
+        var car= {
+            name: "BWM",
+            model: "320d",
+            color: "Kırmızı",
+            start:function() {
+                return "Bmw çalıştı";
+            },
+            stop:function() {
+                return "Bwm durdu";
+            }
+        }
+        console.log(car);
+        console.log(car.start());
+        console.log(car.stop());
+
+        console.log(typeof (a));
+        console.log(a);
+
+        var sayi = Math.random();
+        sayi *= 10;
+        sayi = parseInt(sayi)+10;
+        console.log(sayi);
+    </script>
+</head>
+<body onload="myFunction2()">
+
+</body>
+</html>
