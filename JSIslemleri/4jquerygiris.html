@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="Scripts/jquery-3.1.1.js"></script>
+    <style>
+        #panel {
+            width: 200px;
+            height: 200px;
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="Tıkla" id="btnGiris" />
+    <input type="text" />
+    <input type="datetime" />
+    <br />
+    <input type="range" class="renk" id="r" max="255" min="0" /><br />
+    <input type="range" class="renk" id="g" max="255" min="0" /><br />
+    <input type="range" class="renk" id="b" max="255" min="0" /><br />
+    <input type="range" class="renk" id="kose" max="50" min="0" value="0" /><br />
+    <div id="panel"></div>
+    <br />
+    <input type="color" id="inprenk" />
+    <script>
+        $("#btnGiris").click(function () {
+            $("[type=text]").toggle(1000);
+        });
+        $(".renk").change(renklendir);
+        $("#inprenk").change(function() {
+            $("#panel").css("border", "5px solid "+this.value);
+        });
+        function renklendir () {
+            var r, g, b;
+            r = $("#r").val();
+            g = $("#g").val();
+            b = $("#b").val();
+            var renkkodu = "rgb(" + r + "," + g + "," + b + ")";
+            console.log(renkkodu);
+            $("#panel").css("background-color", renkkodu);
+            var kose = $("#kose").val();
+            $("#panel").css("border-radius", kose + "px");
+        }
+
+        $(document).ready(function() {
+            renklendir();
+        }); 
+    </script>
+</body>
+</html>
