@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        #mesajdiv {
+            width: 60%;
+            margin: 40px;
+            padding: 10px;
+            background-color: cadetblue;
+            height: auto;
+        }
+
+            #mesajdiv > ul > li {
+                color: crimson;
+                font-family: 'Arial';
+                font-size: larger;
+            }
+            #mesajdiv > ul >li >span {
+                margin-right: 4px;
+                font-weight: bold;
+            }
+    </style>
+</head>
+<body>
+    <input type="text" placeholder="Meyve Gir" id="txtMeyve" />
+    <input type="button" value="Ekle" onclick="meyveekle(document.getElementById('txtMeyve').value)" />
+    <br />
+    <div id="mesajdiv">
+        <ul>
+            <li id="1"><span>1 adet</span>Elma</li>
+            <li id="2"><span>2 adet</span>Armut</li>
+        </ul>
+    </div>
+
+    <script>
+        var meyvesepeti = [];
+        function meyveekle(meyveadi) {
+            var yeniMeyve = {
+                isim: meyveadi
+            };
+            if (meyvesepeti.length === 0) {
+                yeniMeyve.id = 1;
+                yeniMeyve.adet = 1;
+                meyvesepeti.push(yeniMeyve);
+            } else {
+                var varmi = false;
+                for (var i = 0; i < meyvesepeti.length; i++) {
+                    if (meyvesepeti[i].isim === meyveadi) {
+                        varmi = true;
+                        meyvesepeti[i].adet++;
+                        break;
+                    }
+                }
+                if (!varmi) {
+                    yeniMeyve.id = meyvesepeti.length + 1;
+                    yeniMeyve.adet = 1;
+                    meyvesepeti.push(yeniMeyve);
+                }
+            }
+            //console.log(meyvesepeti);
+            meyvedoldur();
+        }
+
+        function meyvedoldur() {
+            document.getElementById("mesajdiv").innerHTML = "";
+
+        }
+    </script>
+
+
+</body>
+</html>
