@@ -17,10 +17,11 @@
                 font-family: 'Arial';
                 font-size: larger;
             }
-            #mesajdiv > ul >li >span {
-                margin-right: 4px;
-                font-weight: bold;
-            }
+
+                #mesajdiv > ul > li > span {
+                    margin-right: 4px;
+                    font-weight: bold;
+                }
     </style>
 </head>
 <body>
@@ -28,10 +29,6 @@
     <input type="button" value="Ekle" onclick="meyveekle(document.getElementById('txtMeyve').value)" />
     <br />
     <div id="mesajdiv">
-        <ul>
-            <li id="1"><span>1 adet</span>Elma</li>
-            <li id="2"><span>2 adet</span>Armut</li>
-        </ul>
     </div>
 
     <script>
@@ -65,7 +62,33 @@
 
         function meyvedoldur() {
             document.getElementById("mesajdiv").innerHTML = "";
-
+            var ul = document.createElement("ul");
+            var toplam = 0;
+            for (var i = 0; i < meyvesepeti.length; i++) {
+                var li = document.createElement("li");
+                var btn = document.createElement("input");
+                btn.setAttribute("type", "button");
+                btn.setAttribute("value", "Arttır");
+                btn.setAttribute("id", meyvesepeti[i].id);
+                btn.addEventListener("click", urunarttir);
+                li.innerHTML = "<span>" + meyvesepeti[i].adet + " adet</span>" + meyvesepeti[i].isim;
+                li.appendChild(btn);
+                ul.appendChild(li);
+                toplam += meyvesepeti[i].adet;
+            }
+            var li2 = document.createElement("li");
+            li2.innerHTML = "<span>Toplam " + toplam + " adet ürün sepette";
+            ul.appendChild(li2);
+            document.getElementById("mesajdiv").appendChild(ul);
+        }
+        function urunarttir() {
+            for (var i = 0; i < meyvesepeti.length; i++) {
+                if (meyvesepeti[i].id == this.id) {
+                    meyvesepeti[i].adet++;
+                    break;
+                }
+            }
+            meyvedoldur();
         }
     </script>
 
