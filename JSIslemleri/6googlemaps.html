@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <title></title>
     <link href="Content/bootstrap.css" rel="stylesheet" />
+    <link href="Content/four.css" rel="stylesheet" />
     <style>
         #map, #street {
             width: 100%;
@@ -26,6 +27,9 @@
             <div class="col-md-6">
                 <div id="street"></div>
             </div>
+        </div>
+        <div class="row">
+            <div id="lokantalar"></div>
         </div>
     </div>
 
@@ -102,10 +106,11 @@
                     boylam: pos.lng()
                 };
                 console.log(enboy);
+                lokantalarigetir(enboy);
                 map.panTo(pos);
                 var streetdiv = document.getElementById("street");
                 var streetsettings = {
-                    position: {lat: enboy.enlem, lng: enboy.boylam},
+                    position: { lat: enboy.enlem, lng: enboy.boylam },
                     addressControlOptions: {
                         position: google.maps.ControlPosition.BOTTOM_CENTER
                     },
@@ -115,7 +120,7 @@
                 };
                 var street = new google.maps.StreetViewPanorama(streetdiv, streetsettings);
                 var calisti = false;
-                street.addListener('position_changed', function() {
+                street.addListener('position_changed', function () {
                     console.log(street.getPosition());
                     if (calisti) {
                         marker.setMap(null);
@@ -129,6 +134,35 @@
         $("#btnkonumbul").click(function () {
             navigator.geolocation.getCurrentPosition(initMap);
         });
+        function lokantalarigetir(enboy) {
+            $("#lokantalar").empty();
+            var apiıurl = "https://api.foursquare.com/v2/venues/search?client_id=EGOSDS4LL2KJLY20DPWMXRND3KL13DJVMVKVVJ0PLMJPJQPU&client_secret=N1351BVZ0YBSHWERNU3R04IJY0X5WEHRQRJHRFDOYFQBJ4D1&v=20170807&ll=" + enboy.enlem + "," + enboy.boylam + "&radius=500&categoryId=4d4b7105d754a06374d81259";
+            $.ajax({
+                url: apiıurl,
+                datatype: "json",
+                type: "get"
+            }).done(function (data) {
+                $.each(data.response.venues,
+                    function (key, value) {
+                        firmalarigoster(value);
+                    });
+            });
+        }
+        function firmalarigoster(firma) {
+            var div = document.createElement("div");
+            $(div).addClass("firmakarti");
+            var h3 = document.createElement("h3");
+            h3.innerText = firma.name;
+            var spanadres = document.createElement("span");
+            $(spanadres).addClass("adres");
+            $(spanadres).html(firma.location.address);
+            var spanburada = document.createElement("span");
+            $(spanburada).addClass("burada");
+            spanburada.innerHTML = firma.hereNow.summary;
+
+            $(h3).appendTo(div);
+            $(div).append(spanadres).append(spanburada).appendTo($("#lokantalar"));
+        }
     </script>
 </body>
 </html>
