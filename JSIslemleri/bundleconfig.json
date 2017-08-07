@@ -4,5 +4,11 @@
     "inputFiles": [
       "Scripts/jquery-3.1.1.js"
     ]
+  },
+  {
+    "outputFileName": "Scripts/bootstrap.min.js",
+    "inputFiles": [
+      "Scripts/bootstrap.js"
+    ]
   }
 ]

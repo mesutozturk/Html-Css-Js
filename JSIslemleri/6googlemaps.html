@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <style>
+        #map {
+            width: 100%;
+            height: 400px;
+            background-color: tomato;
+        }
+
+        .row {
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2">
+                <input type="button" id="btnkonumbul" class="btn btn-info" value="Konum Bul" />
+            </div>
+            <div class="col-md-10">
+                <div id="map"></div>
+            </div>
+        </div>
+    </div>
+
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCgWA-AutGtTLG58S0M44TmNQyGxd3S3eU"
+            type="text/javascript"></script>
+    <script src="Scripts/jquery-3.1.1.js"></script>
+    <script src="Scripts/bootstrap.js"></script>
+    <script>
+        function initMap(konum) {
+            var latlng = {
+                lat: konum.coords.latitude,
+                lng: konum.coords.longitude
+            };
+            console.log(latlng);
+            var mapdiv = document.getElementById('map');
+            var settings = {
+                center: latlng,
+                zoom: 15,
+                mapTypeId: google.maps.MapTypeId.ROADMAP,
+                mapTypeControl: true,
+                navigationControlOptions: {
+                    style: google.maps.NavigationControlStyle.SMALL
+                }
+            };
+            var map = new google.maps.Map(mapdiv, settings);
+            var marker = new google.maps.Marker({
+                position: latlng,
+                map: map,
+                title: "Şu anda buradasınız",
+                animation: google.maps.Animation.DROP,
+                draggable: true
+            });
+
+            var trafficLayer = new google.maps.TrafficLayer();
+            trafficLayer.setMap(map);
+            var transitLayer = new google.maps.TransitLayer();
+            transitLayer.setMap(map);
+
+            function toggleMarker() {
+                if (marker.getAnimation() !== null) {
+                    marker.setAnimation(null);
+                } else {
+                    marker.setAnimation(google.maps.Animation.BOUNCE);
+                }
+            }
+            marker.addListener("click", toggleMarker);
+            marker.addListener("dragend",
+                function (e) {
+                    var enboy = {
+                        enlem: e.latLng.lat(),
+                        boylam: e.latLng.lng()
+                    };
+                    console.log(enboy);
+                });
+
+            map.addListener("click", function () {
+                marker.setMap(null);
+            });
+            map.addListener("click", function (e) {
+                placeMarkerAndPanTo(e.latLng, map);
+            });
+
+            function placeMarkerAndPanTo(pos,m) {
+                google.maps.Marker
+                marker = new google.maps.Marker({
+                    position: pos,
+                    map: m
+                });
+                var enboy = {
+                    enlem: pos.lat(),
+                    boylam: pos.lng()
+                };
+                console.log(enboy);
+                map.panTo(pos);
+            }
+        }
+
+        $("#btnkonumbul").click(function () {
+            navigator.geolocation.getCurrentPosition(initMap);
+        });
+    </script>
+</body>
+</html>
